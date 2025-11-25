@@ -25,7 +25,7 @@ app.get('/api/data', (req, res) => {
 // -----------------------------------
 // Route 2: PUT /api/data (Replace Data)
 // -----------------------------------
-app.put('/api/data:id', (req, res) => {
+app.put('/api/data', (req, res) => {
     const { script_number, title } = req.body;
     
     // --- Input Validation ---
@@ -63,7 +63,7 @@ app.put('/api/data:id', (req, res) => {
     apiData.script_number = script_number;
     apiData.title = title; // Storing the boolean value
 
-    console.log('PUT request successful. Data updated.');
+    console.log('POST request successful. Data updated.');
 
     // Send the updated data back to the client
     res.json({
@@ -76,5 +76,5 @@ app.put('/api/data:id', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
     console.log(`- GET: http://localhost:${port}/api/data (To fetch the variables)`);
-    console.log(`- PUT: http://localhost:${port}/api/data (To replace the variables)`);
+    console.log(`- POST: http://localhost:${port}/api/data (To replace the variables)`);
 });

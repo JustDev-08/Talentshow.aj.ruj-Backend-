@@ -10,7 +10,7 @@ app.use(express.json());
 // --- The Data Store ---
 // Now initialized with a Boolean for 'title'.
 let apiData = {
-    script_number: 0,      // Integer
+    script_number: 0,       // Integer
     title: false            // Boolean (Updated to be true or false)
 };
 
@@ -25,7 +25,7 @@ app.get('/api/data', (req, res) => {
 // -----------------------------------
 // Route 2: PUT /api/data (Replace Data)
 // -----------------------------------
-app.put('/api/data', (req, res) => {
+app.put('/api/data:id', (req, res) => {
     const { script_number, title } = req.body;
     
     // --- Input Validation ---

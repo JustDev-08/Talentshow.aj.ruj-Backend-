@@ -25,7 +25,7 @@ app.get('/api/data', (req, res) => {
 // -----------------------------------
 // Route 2: PUT /api/data (Replace Data)
 // -----------------------------------
-app.put('/api/data', (req, res) => {
+app.post('/api/data', (req, res) => {
     const { script_number, title } = req.body;
     
     // --- Input Validation ---
